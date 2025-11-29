@@ -1,0 +1,13 @@
+from twilio.rest import Client
+
+account_sid = "YOUR_ACCOUNT_SID"
+auth_token = "YOUR_AUTH_TOKEN"
+client = Client(account_sid, auth_token)
+
+message = client.messages.create(
+    body="Hello, I am Priyansh Kharol from Twilio!",
+    from_="YOUR_TWILIO_NUMBER",
+    to="RECEIVER_NUMBER"
+)
+
+print("Message sent! SID:", message.sid)
